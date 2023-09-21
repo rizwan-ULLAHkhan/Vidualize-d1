@@ -7,8 +7,8 @@ const NavBar = () => {
     <nav className=" pt-1 borger-heather text-xs md:text-base bg-black zabove w-full flex flex-col sm:flex sm:flex-col items-center lg:pb-1 sm:justify-between lg:flex-row">
       <div className="flex items-center mb-2 lg:mb-0  ">
         <a className=' flex items-center mr-8 mb-2 lg:mb-0' href='/'>
-          <div className="relative ">
-            <Image className='py-1  rounded-lg' src="/cyan logo.png" alt="Logo" width={90} height={90} />
+          <div className="relative ml-3">
+            <Image className='py-1  rounded-lg' src="/cyan logo1.png" alt="Logo" width={70} height={70} />
           </div>
           <div className=" text-cyan  font-bold  text-3xl  my-special-div ">Vidualize</div>
         </a>

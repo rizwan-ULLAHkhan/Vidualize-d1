@@ -1,7 +1,8 @@
 'use client'
+
 import React, { useState, useEffect, useRef } from 'react';
 
-const BVideoCarousel = ({ videoURLs, tittle,idforswipe }) => {
+const LongformCarousel = ({ videoURLs, tittle }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const videoRefs = useRef([]);
   const [isPlaying, setIsPlaying] = useState(new Array(videoURLs.length).fill(false));
@@ -47,7 +48,7 @@ const BVideoCarousel = ({ videoURLs, tittle,idforswipe }) => {
     });
 
     // Add event listeners for touch events within the video carousel container
-    const carouselContainer = document.getElementById(idforswipe);
+    const carouselContainer = document.getElementById('longform-carousel-container');
     carouselContainer.addEventListener('touchstart', handleTouchStart);
     carouselContainer.addEventListener('touchmove', handleTouchMove);
     carouselContainer.addEventListener('touchend', handleTouchEnd);
@@ -85,8 +86,8 @@ const BVideoCarousel = ({ videoURLs, tittle,idforswipe }) => {
   };
 
   return (
-    <div id={idforswipe} className="lg:hidden bg-black pt-10" data-carousel="static">
-      <div className='  font-medium my-special-div flex justify-center '>
+    <div id="longform-carousel-container" className="bg-black pt-10 hidden" data-carousel="static">
+      <div className='  font-medium my-special-div flex justify-center pb-10 '>
         <h2 className='md:text-4xl text-2xl  text-white'>{tittle} </h2>
       </div>
       <div className="relative">
@@ -124,7 +125,7 @@ const BVideoCarousel = ({ videoURLs, tittle,idforswipe }) => {
           ))}
         </div>
 
-        <div className="absolute left-0  top-1/2 transform -translate-y-1/2 cursor-pointer md:ml-44  rounded-lg" onClick={goToPreviousImage}>
+        <div className="absolute left-0  top-1/2 transform -translate-y-1/2 cursor-pointer md:ml-44   rounded-lg" onClick={goToPreviousImage}>
           <button
             type="button"
             className="xs:my-52 my-10"
@@ -137,7 +138,7 @@ const BVideoCarousel = ({ videoURLs, tittle,idforswipe }) => {
           </button>
         </div>
 
-        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer md:mr-44  rounded-lg" onClick={goToNextImage}>
+        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer md:mr-44  md:bg-transparent     rounded-lg" onClick={goToNextImage}>
           <button
             type="button"
             className="xs:my-52 my-10"
@@ -165,4 +166,4 @@ const BVideoCarousel = ({ videoURLs, tittle,idforswipe }) => {
   );
 };
 
-export default BVideoCarousel;
+export default LongformCarousel;

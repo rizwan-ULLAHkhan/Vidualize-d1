@@ -48,7 +48,7 @@ const VideoCarousel = ({ videoSrc }) => {
         <motion.div
           className='inner-carousel  '
           drag='x'
-          dragConstraints={{ right: 0, left: -880 }}
+          dragConstraints={{ right: 0, left: 0 }}
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
         >
@@ -59,8 +59,8 @@ const VideoCarousel = ({ videoSrc }) => {
               onClick={() => handleVideoClick(index)}
             >
               
-              <video className='border-2 border-heather hover:border-black' id={`videoPlayer${index}`} ref={videoRef}>
-                <source src={src} type='video/mp4' />
+              <video className='border-2 border-heather hover:border-black' id={`videoPlayer${index}`} ref={videoRef} autoPlay muted loop>
+                <source src={src} type='video/mp4' autoPlay muted /> 
                 Your browser does not support the video tag.
               </video>
             </motion.div>

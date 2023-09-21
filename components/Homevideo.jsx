@@ -4,10 +4,10 @@
  import { useRef, useEffect } from 'react';
  import PropTypes from 'prop-types';
 
-const VideoPlayer = () => {
+const VideoPlayer = ({videoSrc}) => {
   
   const videoRef = useRef(null);
-  const videoSrc ='/video/Vidualize.mp4'
+  
 
   useEffect(() => {
     if (videoRef.current) {

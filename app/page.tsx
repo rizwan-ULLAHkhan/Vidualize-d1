@@ -12,6 +12,7 @@ import AboutUssm from '../components/About-us-sm'
 import BVideoCarousel from '@/components/ButtonCarousel'
 import VideoCarousel from '@/components/VideoCarousel';
 import WeHaveWorkedWith from '@/components/WeHaveWorkedWith'
+import LongformCarousel from '../components/LongformCarousel'
 
 
 
@@ -49,32 +50,53 @@ export default  function Home() {
 
   
   const videoURL = [
-      '/video/video1.mp4' ,
-      '/video/video1.mp4' ,
-     '/video/video1.mp4' ,
-     '/video/video1.mp4' ,
+    "https://cdn.sanity.io/files/r9425prr/production/a084910b18edcc15566aac6d58525d6c891ca713.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/a084910b18edcc15566aac6d58525d6c891ca713.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/a084910b18edcc15566aac6d58525d6c891ca713.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/a084910b18edcc15566aac6d58525d6c891ca713.mp4",
      
     // Add more video URLs as needed
   ];
 
+
+  const fetchVideoData = async () => {
+    // You can perform asynchronous operations here
+    try {
+      const data = await getVideoData(); // Replace with your actual async operation
+      console.log(data)
+       const url= `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/ ${data[3]}.mp4`
+      return url;
+      // Handle the response as needed
+    } catch (error) {
+      // Handle errors
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    // Call your asynchronous function here
+    fetchVideoData();
+  }, []);
+
   const videoURLS=[
-    "/CollectionVideos/Short 1.mp4",
-    "/CollectionVideos/Short 2.mp4",
-    "/CollectionVideos/Short 3.mp4",
-    "/CollectionVideos/Short 4.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/a084910b18edcc15566aac6d58525d6c891ca713.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/ee30cf377c7ab566931f5105ffdd690631daa6d0.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/e2cf562b55b7b78e781364c0cbbb6ae89ed8ccf6.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/0fec17bb9c7a299acba3027b678f1ea706350121.mp4",
+   
   ]
   
   const videoURLT=[
-    "/CollectionVideos/Trailer 1.mp4",
-    "/CollectionVideos/Trailer 2.mp4",
-    "/CollectionVideos/Trailer 3.mp4",
-    "/CollectionVideos/Trailer 4.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/478e3cf9047adc7facf38d0367a3e9189ed6c5ba.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/e0c8e84192585caf4a537894790f3eb20ce582e7.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/b0f107f98b4d61808ebcf33d876e008e7163749b.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/82844559e0063e64c9917e42ecc6f81189d0a0fc.mp4",
   ]
 
   const videoURLL=[
-    "/CollectionVideos/Long 1.mp4",
-    "/CollectionVideos/Long 2.mp4",
-    "/CollectionVideos/Long 3.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/2d1e27ed43ac1ede184c8ec280b4ff16b32c1bd6.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/40ffec9592ffe4848db01e938e63349cd5dc336b.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/f0ae5f85c32134bd92e4fbe94363e7b6cd8b068b.mp4",
+    
   ]
 
   return (
@@ -83,11 +105,11 @@ export default  function Home() {
       
       <MainText/>
       
-      <VideoPlayer/>
+      <VideoPlayer videoSrc='https://cdn.sanity.io/files/r9425prr/production/0a79498bd1d2c66ce294be710cedd02913014bd2.mp4'/>
 
-      <BVideoCarousel videoURLs={videoURL} tittle='Shorts/Reels'/>
-      <BVideoCarousel videoURLs={videoURL} tittle='Podcast/Trailer'/>
-      <BVideoCarousel videoURLs={videoURL} tittle='Long Form'/>
+      <BVideoCarousel videoURLs={videoURLS} tittle='Shorts/Reels' idforswipe='1'/>
+      <BVideoCarousel videoURLs={videoURLT} tittle='Podcast/Trailer' idforswipe='2'/>
+      <BVideoCarousel videoURLs={videoURLL} tittle='Long Form' idforswipe='3'/>
       <div className=' md:flex flex-wrap justify-center bg-black  hidden '>
       <FlipCard  frontContent="Shorts/Reels" // Replace "/path/to/front-image.jpg" with the actual path to your image
         backContent="video/video1.mp4" // Replace this with the relevant information
@@ -113,23 +135,25 @@ export default  function Home() {
 
       <ServiceNiche/>
 
-      <VideoCollection videoURL={videoURL}/>
+      <VideoCollection videoURL={videoURLS} title='Shorts and Reels Collection'/>
+      <VideoCollection videoURL={videoURLT} title='Trailers and Podcast collection'/>
+      <LongformCarousel videoURLs={videoURLL} tittle='Long Form Collection'/>
       
 
       {/* <WeHaveWorkedWith/> */}
 
-      <div className=" flex  justify-center bg-black mt-20">
-        <div className='flex flex-col text-white'>
-        <p className=' text-2xl pt-10 animate-charcter'>packages starting from $999/Month</p>
-        <button className="hover:animate-none animate-pulse sm:text-3xl hover:font-bold ml-16 hover:text-cyan text-white border-heather xl:my-10 lg:my-10 sm:w-96 sm:h-16 xs:w-72 xs:h-12 xs:text-2xl  w-60 h-8 text-xl hover:border-white border-2 mx-2 rounded-xl hover:bg-black ">
+      <div className=" flex flex-col justify-center items-center bg-black mt-20 gap-2 lg:gap-0">
+        
+        <p className=' md:text-2xl sm:text-base text-xs pt-4 md:pt-8 animate-charcter'>packages starting from $999/Month</p>
+        <button className="hover:animate-none animate-pulse   md:text-3xl hover:font-bold  hover:text-cyan text-white border-heather xl:my-6 lg:my-8 sm:w-80 sm:h-14 md:w-96 md:h-16 xs:w-60 xs:h-10 xs:text-xl sm:text-2xl   w-56 h-8 text-md   hover:border-white border-2 mx-2 rounded-xl hover:bg-black ">
           <a href='/pages/CalendlyButton' className=''>
             <h1 className=' ml-1 '> BOOK A FREE CALL</h1>
         
             
           </a>
         </button>
-        <p className=' text-xs mx-40'>VidualizeStudio@gmail.com</p>
-        </div>
+        <p className=' text-xs text-white mx-40'>VidualizeStudio@gmail.com</p>
+        
         
       </div>
 

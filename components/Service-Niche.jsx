@@ -3,16 +3,16 @@ import Image from 'next/image';
 
 const ServiceNiche = () => {
   return (
-    <div className="bg-cyan mx-4 py-12 md:py-16">
+    <div className=" bg-cyan-100 mx-4 py-12 md:py-16">
       <div className="container mx-auto text-center">
         <div className='my-special-div '>
-        <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-8 md:mb-12">
+        <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-6 md:mb-10">
           Our Services
         </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-2 ">
           {/* Service 1 */}
-          <div className="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300">
+          <div className="bg-white rounded-lg shadow-xl p-4 hover:shadow-2xl hover:scale-105 transition duration-300">
             <div className="flex justify-center">
               <Image src='/produc.svg' alt="Production Assistance" height={80} width={80} />
             </div>
@@ -27,7 +27,7 @@ const ServiceNiche = () => {
           </div>
 
           {/* Service 2 */}
-          <div className="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300">
+          <div className="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 hover:scale-105">
             <div className="flex justify-center">
               <Image src='/edit.svg' alt="Premium Editing" height={80} width={80} />
             </div>
@@ -42,8 +42,8 @@ const ServiceNiche = () => {
           </div>
 
           {/* Service 3 */}
-          <div className="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 ">
-            <div className="flex justify-center mt-2">
+          <div className="bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 hover:scale-105 ">
+            <div className="flex justify-center mt-2  ">
               <Image src='/support.svg' alt="Professional Support" height={80} width={70} />
             </div>
             <h3 className="md:text-2xl font-semibold mt-4 sm:mt-6 md:mt-4">Professional Support</h3>

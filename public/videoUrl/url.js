@@ -1,12 +1,6 @@
 'use client'
-import imageUrlBuilder from '@sanity/image-url';
 import {client} from '@/app/studio/lib/sanityClient'
-
-
-
-
-  export const getVideoData = async () => {
-
+export const getVideoData = async () => {
   const res = await client.fetch(`*[_type == "video_schema"]{
     Description,
     Homepagevideo,
@@ -17,23 +11,19 @@ import {client} from '@/app/studio/lib/sanityClient'
     }
   }`);
 
-  
-
   // Create asset URLs for each video
-   const videosWithUrls = res.map((video) => ({
+  const videosWithUrls = res.map((video) => ({
     Description: video.Description,
     Homepagevideo: video.Homepagevideo,
     videoURL: video.Video.asset?._ref
-    ? video.Video.asset._ref.replace(/^file-|-mp4$/g, '')// Remove "file-" prefix and "-mp4" suffix
-    : null, // Create the video URL using the _ref field
+      ? video.Video.asset._ref.replace(/^file-|-mp4$/g, '')
+      : null,
   }));
-  return videosWithUrls[0].videoURL;
 
-  
+  // Extract and return an array of video URLs
+  const videoURLs = videosWithUrls.map((video) => video.videoURL).filter(Boolean);
+  return videoURLs;
 };
-
-
-
 
 
 /* videoURL:video.Video.asset?._ref
