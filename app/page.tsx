@@ -79,18 +79,19 @@ export default  function Home() {
   }, []);
 
   const videoURLS=[
-    "https://cdn.sanity.io/files/r9425prr/production/a084910b18edcc15566aac6d58525d6c891ca713.mp4",
-    "https://cdn.sanity.io/files/r9425prr/production/ee30cf377c7ab566931f5105ffdd690631daa6d0.mp4",
-    "https://cdn.sanity.io/files/r9425prr/production/e2cf562b55b7b78e781364c0cbbb6ae89ed8ccf6.mp4",
-    "https://cdn.sanity.io/files/r9425prr/production/0fec17bb9c7a299acba3027b678f1ea706350121.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/bfcb14f4ec98b9089249195ad85ae69923ba0365.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/40df4e19fca511c9193e04f3edc40c7f3509ab4d.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/f89bb9a11318286f88354b407cf699dec53c3b09.mp4 ",
+    "https://cdn.sanity.io/files/r9425prr/production/724f40b578fd296cf6c4b24aae9cbc4d483a2244.mp4",
+ 
    
   ]
   
   const videoURLT=[
-    "https://cdn.sanity.io/files/r9425prr/production/478e3cf9047adc7facf38d0367a3e9189ed6c5ba.mp4",
-    "https://cdn.sanity.io/files/r9425prr/production/e0c8e84192585caf4a537894790f3eb20ce582e7.mp4",
-    "https://cdn.sanity.io/files/r9425prr/production/b0f107f98b4d61808ebcf33d876e008e7163749b.mp4",
-    "https://cdn.sanity.io/files/r9425prr/production/82844559e0063e64c9917e42ecc6f81189d0a0fc.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/9ad924138d6746462bfb542a90e977229a6cd814.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/93c9a063b9429370f1325aa5e30ddcab3b225e17.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/03bc41fef8f3c75ea4884725de35f236c85e9d1f.mp4",
+    "https://cdn.sanity.io/files/r9425prr/production/f59666d09360e340ae8813963461c44a6b015ef7.mp4",
   ]
 
   const videoURLL=[
