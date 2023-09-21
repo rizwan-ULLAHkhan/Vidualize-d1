@@ -28,7 +28,7 @@ const FlipCard = ({ frontContent, backContent, thumbnail, scroll, setScroll }) =
   };
 
   return (
-    <div className='flipCard flex flex-col mx-4 my-4 rounded-xl mt-10'>
+    <div className='flipCard flex flex-col mx-4 my-4 rounded-xl mt-10 '>
       <div className={`flipCardInner rounded-xl  items-center bg-black sm:bg-transparent`}>
         <div className={`flipCardFront flipCardFrontF rounded-xl flex-col-reverse `}>
           <div className='flex rounded-xl'>
@@ -43,7 +43,7 @@ const FlipCard = ({ frontContent, backContent, thumbnail, scroll, setScroll }) =
             <source src={backContent} type="video/mp4" />
           </video>
           <div className='sm:absolute button-container flex sm:mb-0 mb-8'>
-            <button className='border px-2 rounded-md text-lg flex bg-heather border-cyan ' onClick={handleButtonClick}>Click for more
+            <button className='border  px-2 rounded-md text-lg flex bg-heather border-cyan ' onClick={handleButtonClick}>Click for more
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

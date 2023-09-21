@@ -48,7 +48,7 @@ const VideoCarousel = ({ videoSrc }) => {
         <motion.div
           className='inner-carousel  '
           drag='x'
-          dragConstraints={{ right: 0, left: 0 }}
+          dragConstraints={{ right: 0, left: -650 }}
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
         >

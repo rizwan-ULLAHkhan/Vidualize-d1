@@ -3,10 +3,10 @@ import Image from 'next/image';
 
 const ServiceNiche = () => {
   return (
-    <div className=" bg-cyan-100 mx-4 py-12 md:py-16">
+    <div className=" bg-cyan-100 mx-4 py-4  pb-6">
       <div className="container mx-auto text-center">
         <div className='my-special-div '>
-        <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-6 md:mb-10">
+        <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-6 md:mb-8">
           Our Services
         </h2>
         </div>

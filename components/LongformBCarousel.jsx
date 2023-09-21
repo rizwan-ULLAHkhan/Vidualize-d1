@@ -48,7 +48,7 @@ const LongformCarousel = ({ videoURLs, tittle }) => {
     });
 
     // Add event listeners for touch events within the video carousel container
-    const carouselContainer = document.getElementById('longform-carousel-container');
+    const carouselContainer = document.getElementById('longformB-carousel-container');
     carouselContainer.addEventListener('touchstart', handleTouchStart);
     carouselContainer.addEventListener('touchmove', handleTouchMove);
     carouselContainer.addEventListener('touchend', handleTouchEnd);
@@ -86,8 +86,8 @@ const LongformCarousel = ({ videoURLs, tittle }) => {
   };
 
   return (
-    <div id="longform-carousel-container" className=" pt-20 lg:inline-block bg-black  hidden" data-carousel="static">
-      <div className='  font-medium my-special-div flex justify-center '>
+    <div id="longformB-carousel-container" className="bg-black pt-24 lg:hidden" data-carousel="static">
+      <div className='  font-medium my-special-div flex justify-center pb- '>
         <h2 className='md:text-4xl text-2xl  text-white'>{tittle} </h2>
       </div>
       <div className="relative">
@@ -95,12 +95,12 @@ const LongformCarousel = ({ videoURLs, tittle }) => {
           {videoURLs.map((url, index) => (
             <div
               key={index}
-              className={`duration-200 ease-linear flex  flex-row justify-center mx-2 my-2 ${index === currentImageIndex ? 'block' : 'hidden'
+              className={`duration-200 ease-linear flex flex-row justify-center mx-2 my-2 ${index === currentImageIndex ? 'block' : 'hidden'
                 }`}
               data-carousel-item={index === currentImageIndex ? 'active' : ''}
             >
               <video
-                className={`rounded-lg xl:h-screen mb-8 ${index === currentImageIndex ? ' ' : 'hidden'
+                className={`rounded-lg xl:h-screen ${index === currentImageIndex ? ' ' : 'hidden'
                   }`}
                 ref={(el) => (videoRefs.current[index] = el)}
                 onClick={() => togglePlayPause(index)}

@@ -13,6 +13,7 @@ import BVideoCarousel from '@/components/ButtonCarousel'
 import VideoCarousel from '@/components/VideoCarousel';
 import WeHaveWorkedWith from '@/components/WeHaveWorkedWith'
 import LongformCarousel from '../components/LongformCarousel'
+import LongformBCarousel from '../components/LongformBCarousel'
 
 
 
@@ -27,7 +28,7 @@ export default  function Home() {
   useEffect(() => {
     if (scroll1) {
       // Scroll to a specific position (e.g., y-coordinate 500)
-      window.scrollTo({ top: 3400, behavior: 'smooth' });
+      window.scrollTo({ top: 3320, behavior: 'smooth' });
       setScroll1(false)
     }
   }, [scroll1]);
@@ -35,7 +36,7 @@ export default  function Home() {
   useEffect(() => {
     if (scroll2) {
       // Scroll to a specific position (e.g., y-coordinate 500)
-      window.scrollTo({ top: 4100, behavior: 'smooth' });
+      window.scrollTo({ top: 3980, behavior: 'smooth' });
       setScroll2(false)
     }
   }, [scroll2]);
@@ -43,7 +44,7 @@ export default  function Home() {
   useEffect(() => {
     if (scroll3) {
       // Scroll to a specific position (e.g., y-coordinate 500)
-      window.scrollTo({ top: 4800, behavior: 'smooth' });
+      window.scrollTo({ top: 4850, behavior: 'smooth' });
       setScroll2(false)
     }
   }, [scroll3]);
@@ -93,7 +94,7 @@ export default  function Home() {
   ]
 
   const videoURLL=[
-    "https://cdn.sanity.io/files/r9425prr/production/2d1e27ed43ac1ede184c8ec280b4ff16b32c1bd6.mp4",
+    
     "https://cdn.sanity.io/files/r9425prr/production/40ffec9592ffe4848db01e938e63349cd5dc336b.mp4",
     "https://cdn.sanity.io/files/r9425prr/production/f0ae5f85c32134bd92e4fbe94363e7b6cd8b068b.mp4",
     
@@ -109,8 +110,8 @@ export default  function Home() {
 
       <BVideoCarousel videoURLs={videoURLS} tittle='Shorts/Reels' idforswipe='1'/>
       <BVideoCarousel videoURLs={videoURLT} tittle='Podcast/Trailer' idforswipe='2'/>
-      <BVideoCarousel videoURLs={videoURLL} tittle='Long Form' idforswipe='3'/>
-      <div className=' md:flex flex-wrap justify-center bg-black  hidden '>
+      <LongformBCarousel videoURLs={videoURLL} tittle='Long Form Collection'/>
+      <div className=' md:flex flex-wrap justify-center bg-black  hidden bg-gradient-to-b from-black to-white'>
       <FlipCard  frontContent="Shorts/Reels" // Replace "/path/to/front-image.jpg" with the actual path to your image
         backContent="video/video1.mp4" // Replace this with the relevant information
         thumbnail="/thumb1.png" // Replace "/somewhere" with the actual link you want to navigate to/ 
@@ -136,13 +137,13 @@ export default  function Home() {
       <ServiceNiche/>
 
       <VideoCollection videoURL={videoURLS} title='Shorts and Reels Collection'/>
-      <VideoCollection videoURL={videoURLT} title='Trailers and Podcast collection'/>
+      <VideoCollection videoURL={videoURLT} title='Trailers and Podcast Collection'/>
       <LongformCarousel videoURLs={videoURLL} tittle='Long Form Collection'/>
       
 
       {/* <WeHaveWorkedWith/> */}
 
-      <div className=" flex flex-col justify-center items-center bg-black mt-20 gap-2 lg:gap-0">
+      <div className=" flex flex-col justify-center items-center bg-black pt-20 gap-2 lg:gap-0">
         
         <p className=' md:text-2xl sm:text-base text-xs pt-4 md:pt-8 animate-charcter'>packages starting from $999/Month</p>
         <button className="hover:animate-none animate-pulse   md:text-3xl hover:font-bold  hover:text-cyan text-white border-heather xl:my-6 lg:my-8 sm:w-80 sm:h-14 md:w-96 md:h-16 xs:w-60 xs:h-10 xs:text-xl sm:text-2xl   w-56 h-8 text-md   hover:border-white border-2 mx-2 rounded-xl hover:bg-black ">
