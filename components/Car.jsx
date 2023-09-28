@@ -31,7 +31,7 @@ const FlipCard = ({ frontContent, backContent, thumbnail, scroll, setScroll }) =
     <div className='flipCard flex flex-col mx-4 my-4 rounded-xl mt-10 '>
       <div className={`flipCardInner rounded-xl  items-center bg-black sm:bg-transparent`}>
         <div className={`flipCardFront flipCardFrontF rounded-xl flex-col-reverse `}>
-          <div className='flex rounded-xl'>
+          <div className='flex rounded-xl mb-10'>
             <img src={thumbnail} className='rounded-xl sm:mb-0 mb-20 xs:mb-12' />
           </div>
           <div className='font-medium my-special-div'>

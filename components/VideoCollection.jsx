@@ -6,7 +6,7 @@ const VideoCollection = ({videoURL,title}) => {
   return (
     <div>
          <div className='justify-center lg:flex hidden mt-20 my-special-div '>
-        <h1 className='text-black text-4xl '>{title}</h1>
+        <h className='text-black text-4xl '>{title}</h>
         </div>
         <div className=' shadow-xl'>
         <VideoCarousel videoSrc={videoURL} />
