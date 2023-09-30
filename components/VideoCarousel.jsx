@@ -12,7 +12,7 @@ const VideoCarousel = ({ videoSrc }) => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.2; // Adjust the value to control the speed
+      videoRef.current.playbackRate = 1; // Adjust the value to control the speed
     }
   }, []);
 
@@ -43,7 +43,7 @@ const VideoCarousel = ({ videoSrc }) => {
   return (
     <div className=' lg:flex hidden my-2'>
       
-      <motion.div className='carousel mx-40'>
+      <motion.div className='carousel mx-24'>
         
         <motion.div
           className='inner-carousel  '
