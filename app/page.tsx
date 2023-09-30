@@ -9,8 +9,7 @@ import ServiceNiche from '../components/Service-Niche'
 import AboutUssm from '../components/About-us-sm'
 import BVideoCarousel from '@/components/ButtonCarousel'
 import WeHaveWorkedWith from '@/components/WeHaveWorkedWith'
-import LongformCarousel from '../components/LongformCarousel'
-import LongformBCarousel from '../components/LongformBCarousel'
+
 
 
 
@@ -109,7 +108,7 @@ export default  function Home() {
       <BVideoCarousel videoURLs={videoURLS} tittle='Shorts/Reels' idforswipe='1'/>
       <BVideoCarousel videoURLs={videoURLT} tittle='Podcast/Trailer' idforswipe='2'/>
       {/* <LongformBCarousel videoURLs={videoURLL} tittle='Long Form Collection'/> */}
-      <div className=' md:flex flex-wrap justify-center bg-black  hidden bg-gradient-to-b from-black to-white '>
+      <div className=' lg:flex flex-wrap justify-center bg-black  hidden bg-gradient-to-b from-black to-white '>
       <FlipCard  frontContent="Shorts/Reels" // Replace "/path/to/front-image.jpg" with the actual path to your image
         backContent="video/video1.mp4" // Replace this with the relevant information
         thumbnail="/thumb1.png" // Replace "/somewhere" with the actual link you want to navigate to/ 
