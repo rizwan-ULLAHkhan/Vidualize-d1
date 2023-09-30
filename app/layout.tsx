@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className=''>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale= 1" />
+        <meta name="viewport" content="width=device-width, initial-scale= 0.8" />
         {/* Other meta tags, title, and external styles/scripts */}
       </Head>
       <body className="font-'Big Shoulders Display'">
